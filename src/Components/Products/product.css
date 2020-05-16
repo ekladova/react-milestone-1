@@ -1,0 +1,16 @@
+.image {
+  height: 5vw;
+  width: 3vw;
+}
+
+.product {
+  margin: 2vw;
+  padding: 2vw 3vw;
+  border: 1px solid black;
+  min-height: 15vw;
+}
+
+.hide {
+  visibility: hidden;
+  position: absolute;
+}
