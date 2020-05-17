@@ -1,4 +1,6 @@
 import React from "react";
+import ReactDOM from "react-dom";
+
 import "./App.css";
 import Display from "./Components/Cart";
 import Product from "./Components/Products";
@@ -9,6 +11,7 @@ import Product2 from "./assets/6.png";
 import Product3 from "./assets/bla.jpg";
 import Product4 from "./assets/img.jpg";
 
+let displayNode = {};
 const boughtItems = (event) => {
   if (event.target.parentNode.lastChild.value !== 0) {
     let newObject = {
@@ -22,15 +25,22 @@ const boughtItems = (event) => {
           .previousSibling.src,
     };
     console.log(newObject);
-    return (
-      <Product
-        image={newObject.picture}
-        description={newObject.name}
-        price={newObject.price}
-      />
-    );
+    displayNode = newObject;
+    display(displayNode);
+    return displayNode;
   }
 };
+
+function display(node) {
+  ReactDOM.render(
+    <Product
+      image={node.picture}
+      description={node.name}
+      price={node.price}
+    ></Product>,
+    document.getElementById("display")
+  );
+}
 
 function App() {
   return (
@@ -50,9 +60,7 @@ function App() {
         </Product>
       </Display>
 
-      <Display id="display" classNameis="bought">
-        {boughtItems}
-      </Display>
+      <Display id="display" classNameis="bought"></Display>
     </div>
   );
 }
