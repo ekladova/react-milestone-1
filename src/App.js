@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 import "./App.css";
 import Display from "./Components/Cart";
@@ -10,39 +9,50 @@ import Product1 from "./assets/image.jpg";
 import Product2 from "./assets/6.png";
 import Product3 from "./assets/bla.jpg";
 import Product4 from "./assets/img.jpg";
+import { useState } from "react";
 
-let displayNode = {};
-const boughtItems = (event) => {
-  if (event.target.parentNode.lastChild.value !== 0) {
-    let newObject = {
-      name:
-        event.target.parentNode.previousSibling.previousSibling.previousSibling
-          .innerHTML,
-      price: event.target.parentNode.previousSibling.previousSibling.innerHTML,
-      quantity: event.target.parentNode.lastChild.value,
-      picture:
-        event.target.parentNode.previousSibling.previousSibling.previousSibling
-          .previousSibling.src,
-    };
-    console.log(newObject);
-    displayNode = newObject;
-    display(displayNode);
-    return displayNode;
-  }
-};
+function App(props) {
+  let [shoppingCart, setShoppingCart] = useState([]);
 
-function display(node) {
-  ReactDOM.render(
-    <Product
-      image={node.picture}
-      description={node.name}
-      price={node.price}
-    ></Product>,
-    document.getElementById("display")
-  );
-}
+  const boughtItems = (event) => {
+    if (event.target.parentNode.lastChild.value > 0) {
+      const newObject = {
+        name:
+          event.target.parentNode.previousSibling.previousSibling
+            .previousSibling.innerHTML,
+        price:
+          event.target.parentNode.previousSibling.previousSibling.innerHTML,
+        // quantity: event.target.parentNode.lastChild.value,
+        picture:
+          event.target.parentNode.previousSibling.previousSibling
+            .previousSibling.previousSibling.src,
+        id: Date.now(),
+      };
 
-function App() {
+      setShoppingCart(shoppingCart.concat(newObject));
+      if (shoppingCart.length > 0) {
+        setShoppingCart((shoppingCart = Array.from(new Set(shoppingCart))));
+        console.log(shoppingCart);
+      }
+
+      event.target.parentNode.lastChild.value = 0;
+    }
+  };
+
+  const updateDisplay = () => {
+    let displayList = shoppingCart.map((item) => (
+      <li key={item.id}>
+        <Product
+          image={item.picture}
+          description={item.name}
+          price={item.price}
+        ></Product>
+      </li>
+    ));
+
+    return <ul>{displayList}</ul>;
+  };
+
   return (
     <div className="App">
       <Display>
@@ -60,7 +70,9 @@ function App() {
         </Product>
       </Display>
 
-      <Display id="display" classNameis="bought"></Display>
+      <Display id="display" classNameis="bought">
+        {updateDisplay()}
+      </Display>
     </div>
   );
 }

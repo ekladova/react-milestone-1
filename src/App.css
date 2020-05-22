@@ -12,3 +12,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  list-style-type: none;
+}

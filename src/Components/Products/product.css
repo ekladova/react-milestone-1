@@ -8,6 +8,10 @@
   padding: 2vw 3vw;
   border: 1px solid black;
   min-height: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hide {
