@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-milestone-1/static/css/main.b038944e.chunk.css",
-    "main.js": "/react-milestone-1/static/js/main.47a92067.chunk.js",
-    "main.js.map": "/react-milestone-1/static/js/main.47a92067.chunk.js.map",
+    "main.js": "/react-milestone-1/static/js/main.3ec28123.chunk.js",
+    "main.js.map": "/react-milestone-1/static/js/main.3ec28123.chunk.js.map",
     "runtime-main.js": "/react-milestone-1/static/js/runtime-main.5c2ba7cb.js",
     "runtime-main.js.map": "/react-milestone-1/static/js/runtime-main.5c2ba7cb.js.map",
     "static/js/2.dc8bae39.chunk.js": "/react-milestone-1/static/js/2.dc8bae39.chunk.js",
     "static/js/2.dc8bae39.chunk.js.map": "/react-milestone-1/static/js/2.dc8bae39.chunk.js.map",
     "index.html": "/react-milestone-1/index.html",
-    "precache-manifest.7e4ba901d09422702c1b653f65c63fe8.js": "/react-milestone-1/precache-manifest.7e4ba901d09422702c1b653f65c63fe8.js",
+    "precache-manifest.94abdc8508f13a005e2de140a3f7680c.js": "/react-milestone-1/precache-manifest.94abdc8508f13a005e2de140a3f7680c.js",
     "service-worker.js": "/react-milestone-1/service-worker.js",
     "static/css/main.b038944e.chunk.css.map": "/react-milestone-1/static/css/main.b038944e.chunk.css.map",
     "static/js/2.dc8bae39.chunk.js.LICENSE.txt": "/react-milestone-1/static/js/2.dc8bae39.chunk.js.LICENSE.txt",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.5c2ba7cb.js",
     "static/js/2.dc8bae39.chunk.js",
     "static/css/main.b038944e.chunk.css",
-    "static/js/main.47a92067.chunk.js"
+    "static/js/main.3ec28123.chunk.js"
   ]
 }
