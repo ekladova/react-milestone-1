@@ -4,6 +4,9 @@ import "./App.css";
 import Display from "./Components/Cart";
 import Product from "./Components/Products";
 import Button from "./Components/Button";
+import Select from "./Components/Button/Select";
+import Header from "./Components/header";
+import Icon from "./Components/Button/Icons";
 
 import Product1 from "./assets/image.jpg";
 import Product2 from "./assets/6.png";
@@ -16,26 +19,21 @@ function App(props) {
 
   const boughtItems = (event) => {
     if (event.target.parentNode.lastChild.value > 0) {
-      const newObject = {
-        name:
-          event.target.parentNode.previousSibling.previousSibling
-            .previousSibling.innerHTML,
-        price:
-          event.target.parentNode.previousSibling.previousSibling.innerHTML,
-        // quantity: event.target.parentNode.lastChild.value,
+      let newObject = {
+        name: event.target.parentNode.previousSibling.previousSibling.innerHTML,
+        price: event.target.parentNode.previousSibling.innerHTML,
         picture:
           event.target.parentNode.previousSibling.previousSibling
-            .previousSibling.previousSibling.src,
+            .previousSibling.src,
         id: Date.now(),
+        quantity: event.target.parentNode.lastChild.value,
       };
-
-      setShoppingCart(shoppingCart.concat(newObject));
-      if (shoppingCart.length > 0) {
-        setShoppingCart((shoppingCart = Array.from(new Set(shoppingCart))));
-        console.log(shoppingCart);
-      }
-
       event.target.parentNode.lastChild.value = 0;
+      setShoppingCart(
+        shoppingCart
+          .filter((item) => item.name !== newObject.name)
+          .concat(newObject)
+      );
     }
   };
 
@@ -46,7 +44,9 @@ function App(props) {
           image={item.picture}
           description={item.name}
           price={item.price}
-        ></Product>
+        >
+          <Icon />
+        </Product>
       </li>
     ));
 
@@ -55,21 +55,29 @@ function App(props) {
 
   return (
     <div className="App">
+      <Header></Header>
       <Display>
         <Product image={Product1} description="Product 1" price="5">
-          <Button type="submit" onClick={boughtItems} />
+          <Button type="submit" onClick={boughtItems}>
+            <Select></Select>
+          </Button>
         </Product>
-        <Product image={Product2} description="Product 2" price="5">
-          <Button type="submit" onClick={boughtItems} />
+        <Product image={Product2} description="Product 2" price="15">
+          <Button type="submit" onClick={boughtItems}>
+            <Select></Select>
+          </Button>
         </Product>
-        <Product image={Product3} description="Product 3" price="5">
-          <Button type="submit" onClick={boughtItems} />
+        <Product image={Product3} description="Product 3" price="10">
+          <Button type="submit" onClick={boughtItems}>
+            <Select></Select>
+          </Button>
         </Product>
-        <Product image={Product4} description="Product 4" price="5">
-          <Button type="submit" onClick={boughtItems} />
+        <Product image={Product4} description="Product 4" price="25">
+          <Button type="submit" onClick={boughtItems}>
+            <Select></Select>
+          </Button>
         </Product>
       </Display>
-
       <Display id="display" classNameis="bought">
         {updateDisplay()}
       </Display>

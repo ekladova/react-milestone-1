@@ -5,3 +5,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.bought {
+  border-top: 5px solid black;
+  align-self: flex-end;
+}

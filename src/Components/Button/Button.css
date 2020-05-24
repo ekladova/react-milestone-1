@@ -1,0 +1,21 @@
+.buyButton {
+  padding: 0.5vw 1.5vw;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  display: block;
+  margin: 1vw;
+}
+
+.buyButton:hover {
+  background-color: rgb(177, 166, 166);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.selectButton {
+  align-self: center;
+}
