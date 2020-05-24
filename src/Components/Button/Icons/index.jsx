@@ -5,9 +5,14 @@ const deleteElement = (event) => {
   event.target.parentNode.parentNode.removeChild(event.target.parentNode);
 };
 
-const Icon = ({ onClick }) => {
+const Icon = () => {
   return (
-    <span className="deleteIcon" role="img" onClick={deleteElement}>
+    <span
+      className="deleteIcon"
+      role="img"
+      aria-label="delete"
+      onClick={deleteElement}
+    >
       ❌
     </span>
   );

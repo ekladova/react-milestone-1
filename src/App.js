@@ -7,6 +7,7 @@ import Button from "./Components/Button";
 import Select from "./Components/Button/Select";
 import Header from "./Components/header";
 import Icon from "./Components/Button/Icons";
+import TotalPrice from "./Components/Text/Price";
 
 import Product1 from "./assets/image.jpg";
 import Product2 from "./assets/6.png";
@@ -39,12 +40,13 @@ function App(props) {
 
   const updateDisplay = () => {
     let displayList = shoppingCart.map((item) => (
-      <li key={item.id}>
+      <li className="displayedItem" key={item.id}>
         <Product
           image={item.picture}
           description={item.name}
           price={item.price}
         >
+          <p>Quantity: {item.quantity}</p>
           <Icon />
         </Product>
       </li>
@@ -80,9 +82,18 @@ function App(props) {
       </Display>
       <Display id="display" classNameis="bought">
         {updateDisplay()}
+        <TotalPrice
+          sum={shoppingCart.map((item) => {
+            let num = item.price * item.quantity;
+            return num;
+          })}
+        />
       </Display>
     </div>
   );
 }
 
 export default App;
+
+// {shoppingCart.map((item) => {
+//   return sum.push(item.price * item.quantity)
