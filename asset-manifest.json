@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ekladova/react-milestone-1/static/css/main.b038944e.chunk.css",
+    "main.js": "/ekladova/react-milestone-1/static/js/main.dddcfeda.chunk.js",
+    "main.js.map": "/ekladova/react-milestone-1/static/js/main.dddcfeda.chunk.js.map",
+    "runtime-main.js": "/ekladova/react-milestone-1/static/js/runtime-main.55aa0cee.js",
+    "runtime-main.js.map": "/ekladova/react-milestone-1/static/js/runtime-main.55aa0cee.js.map",
+    "static/js/2.dc8bae39.chunk.js": "/ekladova/react-milestone-1/static/js/2.dc8bae39.chunk.js",
+    "static/js/2.dc8bae39.chunk.js.map": "/ekladova/react-milestone-1/static/js/2.dc8bae39.chunk.js.map",
+    "index.html": "/ekladova/react-milestone-1/index.html",
+    "precache-manifest.fb0fafc7c01fdee887278bcd7cd35fef.js": "/ekladova/react-milestone-1/precache-manifest.fb0fafc7c01fdee887278bcd7cd35fef.js",
+    "service-worker.js": "/ekladova/react-milestone-1/service-worker.js",
+    "static/css/main.b038944e.chunk.css.map": "/ekladova/react-milestone-1/static/css/main.b038944e.chunk.css.map",
+    "static/js/2.dc8bae39.chunk.js.LICENSE.txt": "/ekladova/react-milestone-1/static/js/2.dc8bae39.chunk.js.LICENSE.txt",
+    "static/media/6.png": "/ekladova/react-milestone-1/static/media/6.3be7f2c4.png",
+    "static/media/image.jpg": "/ekladova/react-milestone-1/static/media/image.b17e5267.jpg",
+    "static/media/img.jpg": "/ekladova/react-milestone-1/static/media/img.95eba9fd.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55aa0cee.js",
+    "static/js/2.dc8bae39.chunk.js",
+    "static/css/main.b038944e.chunk.css",
+    "static/js/main.dddcfeda.chunk.js"
+  ]
+}
